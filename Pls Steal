@@ -1,0 +1,177 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+
+
+function Script()
+    local Window = Library.CreateLib("Pls Steal", "BloodTheme")
+
+
+
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+
+
+    -- Script
+
+
+    local Main = Window:NewTab("Player")
+    local PlayerSection = Main:NewSection("Player")
+
+        PlayerSection:NewSlider("Walkspeed", "Changes how fast you walk.", 250, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+
+    PlayerSection:NewSlider("JumpPower", "Changes how fast you jump.", 250, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)
+
+    local Main = Window:NewTab("Misc")
+    local MiscSection = Main:NewSection("Misc")
+
+    MiscSection:NewButton("Give Tool", "Gives you an Admin TP Tool.", function()
+        mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Admin Tool"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+    end)
+
+    MiscSection:NewButton("Infinite Yield", "Give you infinite yield script.", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+
+    PlayerSection:NewToggle("Infinite Jump", "Lets you infinitely jump", function()
+        local InfiniteJumpEnabled = true
+        game:GetService("UserInputService").JumpRequest:connect(function()
+            if InfiniteJumpEnabled then
+                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            end
+        end)
+    end)
+
+    MiscSection:NewButton("Cup 1", "Makes cup 1 Invisible.", function()
+    local Descendants = workspace:GetDescendants()
+ 
+ 
+for i, value in pairs(Descendants) do
+    if value.Name == "Important" then
+        local cups = value:GetDescendants()
+        for i, e in pairs (cups) do
+            if e.Name == "Detail" then
+            local v = e.Parent.Parent
+                v["1"].Detail.Transparency = 1
+                v["1"].Primary.Transparency = 1
+            end
+        end
+     end  
+end
+    end)
+
+    MiscSection:NewButton("Cup 2", "Makes cup 2 Invisible.", function()
+    local Descendants = workspace:GetDescendants()
+ 
+ 
+for i, value in pairs(Descendants) do
+    if value.Name == "Important" then
+        local cups = value:GetDescendants()
+        for i, e in pairs (cups) do
+            if e.Name == "Detail" then
+            local v = e.Parent.Parent
+                v["2"].Detail.Transparency = 1
+                v["2"].Primary.Transparency = 1
+            end
+        end
+     end  
+end
+    end)
+
+    MiscSection:NewButton("Cup 3", "Makes cup 3 Invisible.", function()
+    local Descendants = workspace:GetDescendants()
+ 
+ 
+for i, value in pairs(Descendants) do
+    if value.Name == "Important" then
+        local cups = value:GetDescendants()
+        for i, e in pairs (cups) do
+            if e.Name == "Detail" then
+            local v = e.Parent.Parent
+                v["3"].Detail.Transparency = 1
+                v["3"].Primary.Transparency = 1
+            end
+        end
+     end  
+end
+    end)
+
+    MiscSection:NewButton("Cup 4", "Makes cup 4 Invisible.", function()
+    local Descendants = workspace:GetDescendants()
+ 
+ 
+for i, value in pairs(Descendants) do
+    if value.Name == "Important" then
+        local cups = value:GetDescendants()
+        for i, e in pairs (cups) do
+            if e.Name == "Detail" then
+            local v = e.Parent.Parent
+                v["4"].Detail.Transparency = 1
+                v["4"].Primary.Transparency = 1
+            end
+        end
+     end  
+end
+    end)
+
+    MiscSection:NewButton("Cup 5", "Makes cup 5 Invisible.", function()
+    local Descendants = workspace:GetDescendants()
+ 
+ 
+for i, value in pairs(Descendants) do
+    if value.Name == "Important" then
+        local cups = value:GetDescendants()
+        for i, e in pairs (cups) do
+            if e.Name == "Detail" then
+            local v = e.Parent.Parent
+                v["5"].Detail.Transparency = 1
+                v["5"].Primary.Transparency = 1
+            end
+        end
+     end  
+end
+    end)
+
+    MiscSection:NewButton("Uninvisible", "Makes all the cups visible.", function()
+    local Descendants = workspace:GetDescendants()
+ 
+ 
+for i, value in pairs(Descendants) do
+    if value.Name == "Important" then
+        local cups = value:GetDescendants()
+        for i, e in pairs (cups) do
+            if e.Name == "Detail" then
+            local v = e.Parent.Parent
+                v["1"].Detail.Transparency = 0
+                v["1"].Primary.Transparency = 0
+                v["2"].Detail.Transparency = 0
+                v["2"].Primary.Transparency = 0
+                v["3"].Detail.Transparency = 0
+                v["3"].Primary.Transparency = 0
+                v["4"].Detail.Transparency = 0
+                v["4"].Primary.Transparency = 0
+                v["5"].Detail.Transparency = 0
+                v["5"].Primary.Transparency = 0
+            end
+        end
+     end  
+end
+    end)
+
+end
+
+if game.PlaceId == 9846056789 then
+    Script()
+end
